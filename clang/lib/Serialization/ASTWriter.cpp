@@ -5853,7 +5853,7 @@ void ASTWriter::WriteSpecialDeclRecords(Sema &SemaRef) {
     const auto *RecordToCopyCtor = Context.getRecordToCopyCtor();
     if (RecordToCopyCtor) {
       RecordData ExceptionCopyingConstructors;
-      for (const auto [RD, CD] : *RecordToCopyCtor) {
+      for (const auto &[RD, CD] : *RecordToCopyCtor) {
         AddDeclRef(RD, ExceptionCopyingConstructors);
         AddDeclRef(CD, ExceptionCopyingConstructors);
       }
